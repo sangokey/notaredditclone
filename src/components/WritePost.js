@@ -3,7 +3,7 @@ import React from 'react';
 class WritePost extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {title: "", contents: "", showPost: false}
+        this.state = {title: "", contents: "", group: "", showPost: false}
         this.update_posts = this.update_posts.bind(this);
     };
     show_post_input () {
@@ -20,6 +20,10 @@ class WritePost extends React.Component {
 
     content_change (e) {
         this.setState({contents: e.target.value})
+    };
+
+    group_change (e) {
+        this.setState({group: e.target.value})
     };
    
 
@@ -64,6 +68,9 @@ class WritePost extends React.Component {
                 </label>
                 <label style = {{marginLeft: "10px"}}>
                     <input type="text" placeholder="Enter Post Body" style = {{width: "400px"}} onChange ={this.content_change.bind(this)}/>
+                </label>
+                <label style = {{marginLeft: "10px"}}>
+                    <input type="text" placeholder="Optional: Enter a Group" style = {{width: "400px"}} onChange ={this.group_change.bind(this)}/>
                 </label>
                 <input type="submit" value="Submit" />
             </form>
