@@ -3,7 +3,7 @@ import React from 'react';
 class Login extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showLogin: false, showRegister: false};
+        this.state = {showLogin: false, showRegister: false, login: {username: null, password: null}, registration: {email: null, username: null, password: null}};
 
     }
     show_login() {
@@ -22,6 +22,27 @@ class Login extends React.Component {
         this.setState({showRegister: false})
     };
 
+    registerFunction () {
+
+    };
+
+    logInFunction (e) {
+        e.preventDefault();
+        this.props.func(this.state.login.username)
+    }
+
+    username_change (e) {
+        var dummy = {...this.state.login};
+        dummy.username = e.target.value;
+        this.setState({dummy})
+    };
+
+    password_change (e) {
+        var dummy = {...this.state.login};
+        dummy.password = e.target.value;
+        this.setState({dummy})
+    };
+
 render() {
     return (
         <div>
@@ -34,7 +55,7 @@ render() {
             </button>
 
         {this.state.showRegister ?
-        <form>
+        <form onSubmit = {this.registerFunction.bind(this)}>
             <h2>Join:</h2>
             <label style = {{marginRight: "20px"}}>
                 Email:
@@ -53,14 +74,14 @@ render() {
         : null}
 
         {this.state.showLogin ?
-        <form>
+        <form onSubmit = {this.logInFunction.bind(this)}>
             <label style = {{marginRight: "20px"}}>
             Username:
-            <input type="text" name="name" />
+            <input type="text" name="name" onChange = {this.username_change.bind(this)} />
             </label>
             <label>
                 Password:
-                <input type="text" name="password" />
+                <input type="text" name="password" onChange = {this.password_change.bind(this)}/>
             </label>
             <input type="submit" value="Submit" />
         </form>

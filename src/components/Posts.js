@@ -15,7 +15,7 @@ class Posts extends React.Component {
         new_state.titles.unshift(arr[0])
         new_state.authors.unshift(arr[1])
         new_state.contents.unshift(arr[2])
-        new_state.create_date.unshift(arr[3])
+        new_state.create_dates.unshift(arr[3])
 
         this.setState(new_state)
     }
@@ -23,7 +23,7 @@ class Posts extends React.Component {
 render() {
     return (
         <div style = {{margin:"40px"}}>
-            <WritePost update = {this.createPost}/>
+            <WritePost update = {this.createPost} username = {this.props.username}/>
 
             {this.state.authors.map((authors, authorIndex) => {
                 return (<Post
