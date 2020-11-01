@@ -3,7 +3,7 @@ import React from 'react';
 class WritePost extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {title: "", contents: "", showPost: false, user: this.props.username}
+        this.state = {title: "", contents: "", showPost: false}
         this.update_posts = this.update_posts.bind(this);
     };
     show_post_input () {
@@ -28,7 +28,7 @@ class WritePost extends React.Component {
 
         const arr = [];
         arr.push(this.state.title);
-        arr.push(this.state.user ? this.state.user : "Anonymous");
+        arr.push(this.props.username ? this.props.username : "Anonymous");
         arr.push(this.state.contents);
         var today = new Date();
         var dd = today.getDate();

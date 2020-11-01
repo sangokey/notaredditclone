@@ -28,19 +28,18 @@ class Login extends React.Component {
 
     logInFunction (e) {
         e.preventDefault();
-        this.props.func(this.state.login.username)
+        this.props.func(this.state.login.username);
+        console.log(this.state)
+        this.close_login() ;
     }
 
     username_change (e) {
-        var dummy = {...this.state.login};
-        dummy.username = e.target.value;
-        this.setState({dummy})
+        
+        this.setState({login: {username: e.target.value, password: this.state.login.password}})
     };
 
     password_change (e) {
-        var dummy = {...this.state.login};
-        dummy.password = e.target.value;
-        this.setState({dummy})
+        this.setState({login: {username: this.state.login.username, password: e.target.value}})
     };
 
 render() {
