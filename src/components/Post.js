@@ -25,7 +25,6 @@ render() {
             </Link>
             <Buttons title={this.props.title} content={this.props.content} group={this.props.group} id={this.props.id} editfunc={this.props.editfunc} deletefunc={this.props.deletefunc}/>
         </div> 
-        
     );
 } }
 export default Post;
