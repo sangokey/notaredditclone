@@ -6,8 +6,8 @@ class Buttons extends React.Component {
         this.state = {title: this.props.title, contents: this.props.content, group: this.props.group, showEdit: false}
         this.update_posts = this.update_posts.bind(this);
     };
-    show_edit () {
-        this.setState({showEdit : true})
+    toggle_edit () {
+        this.setState({showEdit : !this.state.showEdit})
     };
 
     hide_edit () {
@@ -36,12 +36,13 @@ class Buttons extends React.Component {
 
     deletePost() {
         this.props.deletefunc(this.props.id)
+        this.hide_edit();
     };
     
     render() {
         return (
             <div>
-                <button onClick={this.show_edit.bind(this)}>
+                <button onClick={this.toggle_edit.bind(this)}>
                 Edit
               </button>
               <button onClick={this.deletePost.bind(this)}>
