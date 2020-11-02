@@ -52,6 +52,9 @@ function Group ({match}) {
   return (
     <div>
       <h2>{group.name}</h2>
+      <button type ="button">
+          Join/Leave Group
+      </button>
       <p>Created: {group.create_date}</p>
       <p>Description: {group.description}</p>
 
@@ -76,7 +79,9 @@ class Groups extends React.Component {
           < Header func = {this.logIn.bind(this)} user={this.state.user}/>
           <div style = {{paddingTop: "100px"}}>
 
-          <p>[Search Bar Goes Here: Search groups by name]</p>
+          <input type="text" className="input" placeholder="Searchbar goes here" />
+          <br/>
+
             
           <Link to ="/creategroup">
             <button type ="button">
@@ -84,7 +89,7 @@ class Groups extends React.Component {
             </button>
           </Link>
 
-            <h2>Top 5 Groups (by # of users)</h2>
+            <h2>Top Groups (by # of users)</h2>
             <ul>
               {groupData.map(({name, group_id}) => (
                 <li key={group_id}>
