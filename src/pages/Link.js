@@ -4,7 +4,9 @@ import { Link, Route, Switch } from "react-router-dom";
 
 import Header from '../components/Header';
 import Home from '../pages/Home';
-import Group from '../components/Group'
+import Groups from '../pages/Groups';
+import SpecificPost from '../pages/SpecificPost';
+import CreateGroup from '../pages/CreateGroup';
 
 class Links extends React.Component {
   constructor(props) {
@@ -24,16 +26,18 @@ class Links extends React.Component {
         <li>
           <Link to="/">Home</Link>
           <ul>
-            <li>View Posts</li>
+            <li>View All Posts</li>
             <li>Write A New Post</li>
-            <li>Delete, Update Post</li>
+            <li>Delete, Edit Post</li>
+            <li>Click individual post to see post page - write, delete, edit comments</li>
           </ul>
         </li>
         <li>
           <Link to="/group">Groups</Link>
             <ul>
-              <li>View Top Groups</li>
+              <li>View Groups</li>
               <li>Search for Groups</li>
+              <li>Create Group Button</li>
             </ul>
         </li>
         <li>
@@ -47,7 +51,9 @@ class Links extends React.Component {
     
       <Switch>
         <Route exact path="/"><Home /></Route>
-        <Route path="/group"><Group /></Route>
+        <Route path="/group"><Groups /></Route>
+        <Route path='/creategroup'><CreateGroup/></Route>
+        <Route path="/specificpost"><SpecificPost/></Route>
       </Switch>
           </div>
         </div>
