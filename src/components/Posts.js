@@ -19,7 +19,7 @@ class Posts extends React.Component {
         new_state.authors.unshift(arr[1])
         new_state.contents.unshift(arr[2])
         new_state.create_dates.unshift(arr[3])
-        new_state.create_dates.unshift(arr[4])
+        new_state.groups.unshift(arr[4])
         this.setState(new_state)
     };
 
