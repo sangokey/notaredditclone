@@ -11,9 +11,9 @@ import Link from '../pages/Link';
 const Redirect = () => {
   return (
     <Switch> {/* The Switch decides which component to show based on the current URL.*/}
-      <Route exact path='/' component={Home}></Route>
+      <Route exact path='/' component={Links}></Route>
       <Route path='/group' component={Groups}></Route>
-      <Route exact path = '/links' component={Link}></Route>
+      <Route exact path = '/home' component={Home}></Route>
       <Route exact path = '/creategroup' component={CreateGroup}></Route>
       <Route exact path='/specificpost' component={SpecificPost}></Route>
     </Switch>
