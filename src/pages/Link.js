@@ -38,6 +38,7 @@ class Links extends React.Component {
               <li>View Groups</li>
               <li>Search for Groups</li>
               <li>Create Group Button</li>
+              <li>View Group Page - Join/Leave Group PlaceHolder, See Posts for the Group</li>
             </ul>
         </li>
         <li>
