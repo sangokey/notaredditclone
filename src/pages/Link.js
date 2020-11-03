@@ -24,7 +24,7 @@ class Links extends React.Component {
           <div style = {{paddingTop: "100px"}}>
              <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
           <ul>
             <li>View All Posts</li>
             <li>Write A New Post</li>
@@ -50,7 +50,7 @@ class Links extends React.Component {
 
     
       <Switch>
-        <Route exact path="/"><Home /></Route>
+        <Route exact path="/home"><Home /></Route>
         <Route path="/group"><Groups /></Route>
         <Route path='/creategroup'><CreateGroup/></Route>
         <Route path="/specificpost"><SpecificPost/></Route>
